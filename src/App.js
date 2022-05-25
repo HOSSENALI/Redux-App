@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { useSelector, useDispatch } from "react-redux";
 
-import { Decrement, Increment } from './redux/Actions';
+import { Decrement, Increment, IncrementByPayload } from './redux/Actions';
 function App() {
   const dispatch = useDispatch();
   const value = useSelector((state) => state.value);
@@ -14,12 +14,16 @@ function App() {
   const handleChangeDecrement = () => {
     dispatch(Decrement());
   }
+  const handleChangePayload = (value) => {
+    dispatch(IncrementByPayload(value));
+  }
   return (
     <div>
       <p>
         <button onClick={handleChangeIncrement}>+</button>
         {value}
         <button onClick={ handleChangeDecrement}>-</button>
+        <button onClick={ ()=>handleChangePayload(5)}>Payload</button>
       </p>
     </div>
   );

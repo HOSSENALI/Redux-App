@@ -8,3 +8,9 @@ export function Decrement(){
         type:"DECREMENT_VALUE"
     }
 } 
+export function IncrementByPayload(value){
+    return{
+        type:"INCREMENT_PAYLOAD",
+        payload: value
+    }
+} 

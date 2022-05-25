@@ -15,6 +15,11 @@ const initialState = {
           ...state,
           value: state.value - 1,
         };
+      case "INCREMENT_PAYLOAD":
+        return {
+          ...state,
+          value: state.value + action.payload,
+        };
   
       default:
         return state;
