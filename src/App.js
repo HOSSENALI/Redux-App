@@ -3,7 +3,9 @@ import './App.css';
 import { useSelector, useDispatch } from "react-redux";
 
 import { Decrement, Increment, IncrementByPayload } from './redux/Actions';
+import { useState } from 'react';
 function App() {
+  const [input,setInput]=useState("");
   const dispatch = useDispatch();
   const value = useSelector((state) => state.value);
   console.log(value);
@@ -16,6 +18,10 @@ function App() {
   }
   const handleChangePayload = (value) => {
     dispatch(IncrementByPayload(value));
+    setInput("");
+  }
+  const handleInput = (e) => {
+    setInput(e.target.value);
   }
   return (
     <div>
@@ -23,7 +29,8 @@ function App() {
         <button onClick={handleChangeIncrement}>+</button>
         {value}
         <button onClick={ handleChangeDecrement}>-</button>
-        <button onClick={ ()=>handleChangePayload(5)}>Payload</button>
+        <input type="number" onChange={handleInput} value={input}/>
+        <button onClick={ ()=>handleChangePayload(parseInt(input))}>Payload</button>
       </p>
     </div>
   );
