@@ -28,11 +28,9 @@ const Cart = () => {
                             </td>
                             <td>{country.population}</td>
                             <td>{country.region}</td>
-                            <td><button className='btn btn-danger'>Delete</button></td>
+                            <td><button className='button'>Delete</button></td>
                         </tr>
-                    ))}
-
-
+                    ))} 
                 </tbody>
             </Table>
         </div>

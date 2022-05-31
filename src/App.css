@@ -39,3 +39,9 @@
 .heading{
   text-align: center;
 }
+.button{
+  border-radius: 50px;
+  background: linear-gradient(145deg, #f0f0f0, #cacaca);
+  box-shadow:  20px 20px 95px #5a5a5a,
+               -20px -20px 95px #ffffff;
+}
